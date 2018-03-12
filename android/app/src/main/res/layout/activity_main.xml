@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context="com.nex3z.tflitemnist.MainActivity">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/ResultText"
+            android:text="@string/prediction"/>
+
+        <TextView
+            android:id="@+id/tv_prediction"
+            style="@style/ResultText"
+            android:textSize="24sp"
+            android:textColor="@android:color/black"
+            android:text="@string/empty"
+            tools:text="1"/>
+
+        <TableRow>
+
+            <TextView
+                style="@style/ResultText"
+                android:text="@string/probability"/>
+
+            <TextView
+                style="@style/ResultText"
+                android:text="@string/timecost"/>
+
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/tv_probability"
+                style="@style/ResultText"
+                android:textColor="@android:color/black"
+                android:text="@string/empty"
+                tools:text="0.9"/>
+
+
+            <TextView
+                android:id="@+id/tv_timecost"
+                style="@style/ResultText"
+                android:textColor="@android:color/black"
+                android:text="@string/empty"
+                tools:text="10ms"/>
+
+        </TableRow>
+
+    </TableLayout>
+
+    <com.nex3z.tflitemnist.FingerPaintView
+        android:id="@+id/fpv_paint"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="16dp"
+        android:foreground="@drawable/shape_rect_border"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_detect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/detect"/>
+
+        <Button
+            android:id="@+id/btn_clear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/clear"/>
+
+    </LinearLayout>
+
+</LinearLayout>
