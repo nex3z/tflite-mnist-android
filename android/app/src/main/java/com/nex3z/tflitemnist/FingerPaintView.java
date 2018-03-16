@@ -13,6 +13,7 @@ import android.view.View;
 
 public class FingerPaintView extends View {
     private static final String LOG_TAG = FingerPaintView.class.getSimpleName();
+
     private static final float TOUCH_TOLERANCE = 4;
     private static final float PEN_SIZE = 48;
 
@@ -120,6 +121,7 @@ public class FingerPaintView extends View {
         mX = x;
         mY = y;
     }
+
     private void onTouchMove(float x, float y) {
         float dx = Math.abs(x - mX);
         float dy = Math.abs(y - mY);
@@ -129,6 +131,7 @@ public class FingerPaintView extends View {
             mY = y;
         }
     }
+
     private void onTouchUp() {
         mPath.lineTo(mX, mY);
         mDrawingCanvas.drawPath(mPath, mPenPaint);

@@ -27,13 +27,13 @@ public class Classifier {
     private static final int DIM_PIXEL_SIZE = 1;
     private static final int CATEGORY_COUNT = 10;
 
-    private final Interpreter mTfLite;
+    private final Interpreter mInterpreter;
     private final ByteBuffer mImgData;
     private final int[] mImagePixels = new int[DIM_IMG_SIZE_HEIGHT * DIM_IMG_SIZE_WIDTH];
     private final float[][] mResult = new float[1][CATEGORY_COUNT];
 
-    Classifier(Activity activity) throws IOException {
-        mTfLite = new Interpreter(loadModelFile(activity));
+    public Classifier(Activity activity) throws IOException {
+        mInterpreter = new Interpreter(loadModelFile(activity));
 
         mImgData = ByteBuffer.allocateDirect(
                 4 * DIM_BATCH_SIZE * DIM_IMG_SIZE_HEIGHT * DIM_IMG_SIZE_WIDTH * DIM_PIXEL_SIZE);
@@ -43,7 +43,7 @@ public class Classifier {
     public Result classify(Bitmap bitmap) {
         convertBitmapToByteBuffer(bitmap);
         long startTime = SystemClock.uptimeMillis();
-        mTfLite.run(mImgData, mResult);
+        mInterpreter.run(mImgData, mResult);
         long endTime = SystemClock.uptimeMillis();
         long timeCost = endTime - startTime;
         Log.v(LOG_TAG, "run(): result = " + Arrays.toString(mResult[0])
