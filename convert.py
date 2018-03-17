@@ -19,6 +19,7 @@ def main():
 
 
 def convert(options):
+    # Create a model to classify single image
     x_single = tf.placeholder(tf.float32, [1, model.IMAGE_SIZE, model.IMAGE_SIZE, model.IMAGE_CHANNEL_NUM],
                               name="input_single")
     y_single = model.inference(x_single)
@@ -29,11 +30,16 @@ def convert(options):
         ckpt = tf.train.get_checkpoint_state(options.model_dir)
         if ckpt and ckpt.model_checkpoint_path:
             print("Restoring %s" % ckpt.model_checkpoint_path)
+            # Restore the model trained by train.py
             saver.restore(sess, ckpt.model_checkpoint_path)
             graph_def = tf.get_default_graph().as_graph_def()
+            # Freeze the graph
             output_graph = graph_util.convert_variables_to_constants(sess, graph_def, ["output_single"])
-            tflite_model = tf.contrib.lite.toco_convert(output_graph, [x_single], [output_single])
-            open(options.output_file, "wb").write(tflite_model)
+            # The input type and shape of the converted model is inferred from the input_tensors argument
+            tflite_model = tf.contrib.lite.toco_convert(
+                output_graph, input_tensors=[x_single], output_tensors=[output_single])
+            with open(options.output_file, "wb") as f:
+                f.write(tflite_model)
         else:
             print("Checkpoint not found")
 
