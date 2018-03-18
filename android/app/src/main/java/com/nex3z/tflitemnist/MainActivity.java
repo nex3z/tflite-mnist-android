@@ -7,6 +7,8 @@ import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.nex3z.fingerpaintview.FingerPaintView;
+
 import java.io.IOException;
 
 import butterknife.BindView;
