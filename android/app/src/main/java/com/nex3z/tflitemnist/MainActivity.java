@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
 
         Bitmap image = mFpvPaint.exportToBitmap(
                 Classifier.DIM_IMG_SIZE_WIDTH, Classifier.DIM_IMG_SIZE_HEIGHT);
+        // The model is trained on images with black background and white font
         Bitmap inverted = ImageUtil.invert(image);
         Result result = mClassifier.classify(inverted);
         renderResult(result);
