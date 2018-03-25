@@ -2,7 +2,7 @@ from argparse import ArgumentParser
 
 import tensorflow as tf
 from tensorflow.python.framework import graph_util
-from model import mnist as model
+import train
 
 # A workaround to fix an import issue
 # see https://github.com/tensorflow/tensorflow/issues/15410#issuecomment-352189481
@@ -20,9 +20,9 @@ def main():
 
 def convert(options):
     # Create a model to classify single image
-    x_single = tf.placeholder(tf.float32, [1, model.IMAGE_SIZE, model.IMAGE_SIZE, model.IMAGE_CHANNEL_NUM],
+    x_single = tf.placeholder(tf.float32, [1, train.IMAGE_SIZE, train.IMAGE_SIZE, train.IMAGE_CHANNEL_NUM],
                               name="input_single")
-    y_single = model.inference(x_single)
+    y_single = train.inference(x_single)
     output_single = tf.identity(tf.nn.softmax(y_single, axis=1), name="output_single")
 
     with tf.Session() as sess:
