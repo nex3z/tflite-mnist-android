@@ -22,7 +22,7 @@ If you are interested in a [TensorFlow Mobile](https://www.tensorflow.org/mobile
 
 ### Step 1. Training
 
-The model is defined in [mnist.py](https://github.com/nex3z/tflite-mnist-android/blob/master/model/mnist.py), run the following command to train the model.
+The model is defined in [train.py](https://github.com/nex3z/tflite-mnist-android/blob/master/train.py), run the following command to train the model.
 
 ```
 python train.py --model_dir ./saved_model --iterations 10000
