@@ -14,8 +14,7 @@ If you are interested in a [TensorFlow Mobile](https://www.tensorflow.org/mobile
 
 ### Requirement
 
-- TensorFlow 1.6.0
-- Python 3.6, NumPy 1.14.1
+- Python 3.6, TensorFlow 1.8.0
 - Android Studio 3.0, Gradle 4.1
 - Linux or macOS if you want to convert the model to .tflite as described in the [Step 2](#step-2-model-conversion) below
 
@@ -72,9 +71,9 @@ Stay at the TensorFlow repository directory, run the following command to conver
 
 ```
 /bazel-bin/tensorflow/contrib/lite/toco/toco  \
-  --input_file=model_path/mnist.pb \
+  --input_file=./saved_model/mnist.pb \
   --input_format=TENSORFLOW_GRAPHDEF  --output_format=TFLITE \
-  --output_file=output_path/mnist.tflite --inference_type=FLOAT \
+  --output_file=./mnist.tflite --inference_type=FLOAT \
   --input_type=FLOAT --input_arrays=x \
   --output_arrays=output --input_shapes=1,28,28,1
 ```
