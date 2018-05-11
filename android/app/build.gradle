@@ -30,7 +30,7 @@ dependencies {
     implementation 'com.jakewharton:butterknife:8.8.1'
     annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
     implementation 'com.nex3z:finger-paint-view:0.1.0'
-    implementation 'org.tensorflow:tensorflow-lite:0.1.1'
+    implementation 'org.tensorflow:tensorflow-lite:0.1.7'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
