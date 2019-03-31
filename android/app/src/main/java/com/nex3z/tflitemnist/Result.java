@@ -6,9 +6,9 @@ public class Result {
     private final float mProbability;
     private final long mTimeCost;
 
-    public Result(float[] result, long timeCost) {
-        mNumber = argmax(result);
-        mProbability = result[mNumber];
+    public Result(float[] probs, long timeCost) {
+        mNumber = argmax(probs);
+        mProbability = probs[mNumber];
         mTimeCost = timeCost;
     }
 
@@ -35,5 +35,4 @@ public class Result {
         }
         return maxIdx;
     }
-
 }

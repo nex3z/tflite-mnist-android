@@ -44,10 +44,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Bitmap image = mFpvPaint.exportToBitmap(
-                Classifier.DIM_IMG_SIZE_WIDTH, Classifier.DIM_IMG_SIZE_HEIGHT);
-        // The model is trained on images with black background and white font
-        Bitmap inverted = ImageUtil.invert(image);
-        Result result = mClassifier.classify(inverted);
+                Classifier.IMG_WIDTH, Classifier.IMG_HEIGHT);
+        Result result = mClassifier.classify(image);
         renderResult(result);
     }
 
@@ -64,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             mClassifier = new Classifier(this);
         } catch (IOException e) {
             Toast.makeText(this, R.string.failed_to_create_classifier, Toast.LENGTH_LONG).show();
-            Log.e(LOG_TAG, "init(): Failed to create tflite model", e);
+            Log.e(LOG_TAG, "init(): Failed to create Classifier", e);
         }
     }
 
