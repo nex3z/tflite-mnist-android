@@ -2,7 +2,7 @@
 
 [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/nex3z/tflite-mnist-android/blob/master/model.ipynb)
 
-This project demonstrates how to use [TensorFlow Lite](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/lite) on Android for handwritten digits classification from MNIST.
+This project demonstrates how to use [TensorFlow Lite](https://www.tensorflow.org/lite) on Android for handwritten digits classification from MNIST.
 
 <div align="center">
   <img src="image/demo.gif" heigit="500"/>
@@ -10,7 +10,6 @@ This project demonstrates how to use [TensorFlow Lite](https://github.com/tensor
 
 Prebuilt APK can be downloaded from [here](https://github.com/nex3z/tflite-mnist-android/releases/download/v1.0.0/tflite-mnist.apk).
 
-If you are interested in a [TensorFlow Mobile](https://www.tensorflow.org/mobile/mobile_intro) version, please refer to [tfmobile-mnist-android](https://github.com/nex3z/tfmobile-mnist-android).
 
 ## How to build from scratch
 
@@ -48,6 +47,6 @@ aaptOptions {
 
 ## Credits
 
-- The basic model architecture comes from [tensorflow-mnist-tutorial](https://github.com/martin-gorner/tensorflow-mnist-tutorial).
-- The official TensorFlow Lite [Android demo](https://github.com/tensorflow/tensorflow/tree/master/tensorflow/contrib/lite/java/demo/app).
+- The basic model architecture comes from [tensorflow-mnist-tutorial](https://github.com/GoogleCloudPlatform/tensorflow-without-a-phd/tree/master/tensorflow-mnist-tutorial).
+- The official TensorFlow Lite [examples](https://github.com/tensorflow/examples/tree/master/lite/examples).
 - The [FingerPaint](https://android.googlesource.com/platform/development/+/master/samples/ApiDemos/src/com/example/android/apis/graphics/FingerPaint.java) from Android API demo.
