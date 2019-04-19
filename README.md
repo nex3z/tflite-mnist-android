@@ -28,7 +28,7 @@ Run all the code cells in [model.ipynb](https://github.com/nex3z/tflite-mnist-an
 
 ### Step 2. Build Android app
 
-Copy the `mnist.tflite` generated in Step 2 to `/android/app/src/main/assets`, then build and run the app. A prebuilt APK can be downloaded from [here](https://github.com/nex3z/tflite-mnist-android/releases/download/v1.0.0/tflite-mnist.apk).
+Copy the `mnist.tflite` generated in Step 1 to `/android/app/src/main/assets`, then build and run the app. A prebuilt APK can be downloaded from [here](https://github.com/nex3z/tflite-mnist-android/releases/download/v1.0.0/tflite-mnist.apk).
 
 The [Classifer](https://github.com/nex3z/tflite-mnist-android/blob/master/android/app/src/main/java/com/nex3z/tflitemnist/Classifier.java) reads the `mnist.tflite` from `assets` directory and loads it into an [Interpreter](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/java/src/main/java/org/tensorflow/lite/Interpreter.java) for inference. The Interpreter provides an interface between TensorFlow Lite model and Java code, which is included in the following library.
 
