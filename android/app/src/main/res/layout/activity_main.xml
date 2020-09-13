@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
-    tools:context="com.nex3z.tflitemnist.MainActivity">
+    tools:context="com.nex3z.tflite.mnist.MainActivity">
 
     <TableLayout
         android:layout_width="match_parent"
@@ -43,7 +43,6 @@
                 android:textColor="@android:color/black"
                 android:text="@string/empty"
                 tools:text="0.9"/>
-
 
             <TextView
                 android:id="@+id/tv_timecost"

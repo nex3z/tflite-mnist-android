@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">TfLite MNIST</string>
+    <string name="app_name">TFLite MNIST</string>
     <string name="prediction">Prediction</string>
     <string name="probability">Probability</string>
     <string name="timecost">Timecost</string>
