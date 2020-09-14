@@ -15,8 +15,9 @@ Prebuilt APK can be downloaded from [here](https://github.com/nex3z/tflite-mnist
 
 ### Environment
 
-- Python 3.6, TensorFlow 1.13.1
-- Linux or macOS for tflite model conversion.
+- Python 3.7
+- tensorflow 2.3.0
+- tensorflow-datasets 3.2.1
 
 
 ### Step 1. Train and convert the model to TensorFlow Lite FlatBuffer
@@ -30,13 +31,9 @@ Run all the code cells in [model.ipynb](https://github.com/nex3z/tflite-mnist-an
 
 Copy the `mnist.tflite` generated in Step 1 to `/android/app/src/main/assets`, then build and run the app. A prebuilt APK can be downloaded from [here](https://github.com/nex3z/tflite-mnist-android/releases/download/v1.0.0/tflite-mnist.apk).
 
-The [Classifer](https://github.com/nex3z/tflite-mnist-android/blob/master/android/app/src/main/java/com/nex3z/tflitemnist/Classifier.java) reads the `mnist.tflite` from `assets` directory and loads it into an [Interpreter](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/java/src/main/java/org/tensorflow/lite/Interpreter.java) for inference. The Interpreter provides an interface between TensorFlow Lite model and Java code, which is included in the following library.
+The [Classifer](https://github.com/nex3z/tflite-mnist-android/blob/master/android/app/src/main/java/com/nex3z/tflite/mnist/classifier/Classifier.kt) reads the `mnist.tflite` from `assets` directory and loads it into an [Interpreter](https://github.com/tensorflow/tensorflow/blob/master/tensorflow/lite/java/src/main/java/org/tensorflow/lite/Interpreter.java) for inference. The Interpreter provides an interface between TensorFlow Lite model and Java code.
 
-```
-implementation 'org.tensorflow:tensorflow-lite:1.13.1'
-```
-
-If you are building your own app, remember to add the following code to [build.gradle](https://github.com/nex3z/tflite-mnist-android/blob/master/android/app/build.gradle#L19) to prevent compression for model files.
+If you are building your own app, remember to add the following code to [build.gradle](https://github.com/nex3z/tflite-mnist-android/blob/master/android/app/build.gradle#L24) to prevent compression for model files.
 
 ```
 aaptOptions {
